@@ -1,4 +1,8 @@
-FROM nginx:latest 
+FROM ubuntu:23.04
+
+#Hay que instalar NGINX para ubuntu
+
+#Hay que poner un cmd para ubuntu
 
 LABEL author="Joaquin Gonzalez IAW"
 
@@ -7,6 +11,7 @@ LABEL author="Joaquin Gonzalez IAW"
 
 RUN apt update \
     && apt install git -y \
+    && apt install nginx -y \ 
     && rm -rf /var/lib/apt/lists/*
 
 #Podemos tener dos capas diferentes para poder reutilizar cada "CAPA" de una manera diferente.
